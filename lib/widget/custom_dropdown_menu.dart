@@ -30,7 +30,7 @@ class _ColumnDropdownMenuState extends State<ColumnDropdownMenu> {
       children: [
         Text(
           widget.title,
-          style: AppTextStyle.subTitle,
+          style: AppTextStyle.subTitleGrey,
         ),
         SizedBox(
           height: 7.h,

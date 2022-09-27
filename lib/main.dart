@@ -5,6 +5,8 @@ import 'package:camel_express_user/screen/auth/forget_password_phone_screen.dart
 import 'package:camel_express_user/screen/auth/forget_password_screen.dart';
 import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
+import 'package:camel_express_user/screen/home_screen.dart';
+import 'package:camel_express_user/screen/home_test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +51,8 @@ class MyApp extends StatelessWidget {
           ],
           locale: const Locale('en'),
           // locale: Locale(Provider.of<LanguagesProvider>(context).languages),
-          initialRoute: '/login_screen',
+          // initialRoute: '/login_screen',
+          initialRoute: '/home_screen',
           routes: {
             // '/register_screen': (context) => const RegisterScreen(),
             '/login_screen': (context) => const LoginScreen(),
@@ -58,6 +61,8 @@ class MyApp extends StatelessWidget {
             '/forget_password_phone_screen': (context) => const ForgetPasswordPhoneScreen(),
             '/forget_password_email_screen': (context) => const ForgetPasswordEmailScreen(),
             // '/test_screen': (context) => const TestScreen(),
+            '/home_test_screen': (context) => const HomeTestScreen(),
+            '/home_screen': (context) => const HomeScreen(),
           },
         );
       },

@@ -50,7 +50,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               ),
               child: Text(
                 'Choose how you want to send the code',
-                style: AppTextStyle.subTitle,
+                style: AppTextStyle.subTitleGrey,
               ),
             ),
             GestureDetector(

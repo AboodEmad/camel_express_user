@@ -16,7 +16,19 @@ class AppTextStyle {
     color: AppColors.black,
   );
 
-  static TextStyle subTitlePrimary = GoogleFonts.poppins(
+  static TextStyle subTitle = GoogleFonts.poppins(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static TextStyle titleButton = GoogleFonts.poppins(
+    color: AppColors.primary,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle subTitleButton = GoogleFonts.poppins(
     color: AppColors.primary,
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
@@ -28,7 +40,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle subTitle = GoogleFonts.poppins(
+  static TextStyle subTitleGrey = GoogleFonts.poppins(
     color: AppColors.grey,
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,

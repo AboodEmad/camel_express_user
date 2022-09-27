@@ -226,7 +226,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                   child: Text(
                     'Sign up',
-                    style: AppTextStyle.subTitlePrimary,
+                    style: AppTextStyle.subTitleButton,
                   ),
                 ),
               ],

@@ -42,7 +42,7 @@ class ColumnAppTextField extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppTextStyle.subTitle,
+              style: AppTextStyle.subTitleGrey,
             ),
             SizedBox(
               height: 7.h,

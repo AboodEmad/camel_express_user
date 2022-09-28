@@ -12,7 +12,7 @@ class ColumnAppTextField extends StatelessWidget {
     this.prefixIcon,
     required this.keyboardType,
     required this.controller,
-    this.focusedBorderColor = Colors.grey,
+    this.focusedBorderColor = Colors.transparent,
     this.obscureText = false,
     this.suffixIcon,
     this.width = 324,

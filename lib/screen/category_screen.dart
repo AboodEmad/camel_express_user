@@ -61,24 +61,24 @@ class _CategoryScreenState extends State<CategoryScreen> {
             ),
           ),
           GridView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            scrollDirection: Axis.vertical,
+              physics: const NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: 10,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 34.h,
-                crossAxisSpacing: 34.w,
+                mainAxisSpacing: 40.h,
                 childAspectRatio: 207.h / 151.w,
               ),
               itemBuilder: (context, index) {
-                return Container(
+                return Center(
+                  child: Container(
                     width: 151.w,
                     height: 207.h,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Color.fromRGBO(6, 13, 217, 0.05),
+                          color: const Color.fromRGBO(6, 13, 217, 0.05),
                           blurRadius: 8,
                           offset: Offset(0, 5.h),
                         ),
@@ -93,8 +93,26 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       vertical: 9.h,
                     ),
                     child: Column(
-                      children: [],
-                    ));
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/svg_images/clothes.svg',
+                          width: 60.w,
+                          height: 76.h,
+                        ),
+                        SizedBox(height: 25.h,),
+                        Text(
+                          'Clothes',
+                          style: GoogleFonts.poppins(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
               }),
         ],
       ),

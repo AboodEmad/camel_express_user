@@ -35,105 +35,128 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
       ),
-      body: Padding(
+      body: ListView(
         padding: EdgeInsets.symmetric(
           horizontal: 20.w,
         ),
-        child: Column(
-          children: [
-            const ImageLogo(),
-            Padding(
-              padding: EdgeInsetsDirectional.only(
-                top: 30.h,
-                bottom: 15.h,
-              ),
+        children: [
+          const ImageLogo(),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+              top: 30.h,
+              bottom: 15.h,
+            ),
+            child: Center(
               child: Text(
                 'Welcome Back!',
                 style: AppTextStyle.bigTitle,
               ),
             ),
-            Text(
+          ),
+          Center(
+            child: Text(
               'Sign In',
               style: AppTextStyle.title,
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.only(
-                top: 23.h,
-                bottom: 14.h,
-              ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+              top: 23.h,
+              bottom: 14.h,
+            ),
+            child: Center(
               child: ColumnAppTextField(
                 title: 'Email Address Or Phone Number',
                 keyboardType: TextInputType.text,
                 controller: _emailOrPhoneTextController,
               ),
             ),
-            ColumnAppTextField(
-              title: 'Password',
-              keyboardType: TextInputType.visiblePassword,
-              controller: _passwordTextController,
-              suffixIcon: IconButton(
-                padding: EdgeInsetsDirectional.zero,
-                onPressed: () {
-                  setState(() => _passwordObscure = !_passwordObscure);
-                },
-                icon: Icon(
-                  _passwordObscure ? Icons.visibility : Icons.visibility_off,
-                  color: AppColors.primary,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.only(
-                top: 7.h,
-                bottom: 29.h,
-                start: 230.w,
-              ),
-              child: TextButton(
-                style: AppTextStyle.textButtonStyle,
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/forget_password_screen',);
-                },
-                child: Text(
-                  'Forget Password?',
-                  style: AppTextStyle.subTitleButton,
-                ),
-              ),
-            ),
-            AppTextButton(
-              text: 'Sign In',
-              onPressed: () {},
-            ),
-            const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          Center(
+            child: Column(
               children: [
-                Text(
-                  'I\'m a new user?',
-                  style: AppTextStyle.subTitleBlack,
+                ColumnAppTextField(
+                  title: 'Password',
+                  keyboardType: TextInputType.visiblePassword,
+                  controller: _passwordTextController,
+                  suffixIcon: IconButton(
+                    padding: EdgeInsetsDirectional.zero,
+                    onPressed: () {
+                      setState(() => _passwordObscure = !_passwordObscure);
+                    },
+                    icon: Icon(
+                      _passwordObscure ? Icons.visibility : Icons.visibility_off,
+                      color: AppColors.primary,
+                    ),
+                  ),
                 ),
-                SizedBox(width: 3.w,),
-                TextButton(
-                  style: AppTextStyle.textButtonStyle,
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/register_screen',);
-                  },
-                  child: Text(
-                    'Sign up',
-                    style: AppTextStyle.subTitleButton,
+                SizedBox(height: 7.h,),
+                Padding(
+                  padding: EdgeInsetsDirectional.only(end: 32.w,),
+                  child: Align(
+                    alignment: AlignmentDirectional.bottomEnd,
+                    child: TextButton(
+                      style: AppTextStyle.textButtonStyle,
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          '/forget_password_screen',
+                        );
+                      },
+                      child: Text(
+                        'Forget Password?',
+                        style: AppTextStyle.subTitleButton,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20.h,
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+            top: 29.h,
+            bottom: 85.h,
+          ),
+            child: Center(
+              child: AppTextButton(
+                text: 'Sign In',
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home_screen');
+                },
+              ),
             ),
-          ],
-        ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'I\'m a new user?',
+                style: AppTextStyle.subTitleBlack,
+              ),
+              SizedBox(
+                width: 3.w,
+              ),
+              TextButton(
+                style: AppTextStyle.textButtonStyle,
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                    context,
+                    '/register_screen',
+                  );
+                },
+                child: Text(
+                  'Sign up',
+                  style: AppTextStyle.subTitleButton,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -161,7 +161,9 @@ class _ForgetPasswordPhoneScreenState extends State<ForgetPasswordPhoneScreen> {
                   const Spacer(),
                   AppTextButton(
                     text: 'Continue',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/verification_screen',);
+                    },
                     width: 127.w,
                     height: 40.h,
                     fontWeight: FontWeight.w400,

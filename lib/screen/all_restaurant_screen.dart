@@ -8,14 +8,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ResturantScreen extends StatefulWidget {
-  const ResturantScreen({Key? key}) : super(key: key);
+class AllResturantScreen extends StatefulWidget {
+  const AllResturantScreen({Key? key}) : super(key: key);
 
   @override
-  State<ResturantScreen> createState() => _ResturantScreenState();
+  State<AllResturantScreen> createState() => _AllResturantScreenState();
 }
 
-class _ResturantScreenState extends State<ResturantScreen>
+class _AllResturantScreenState extends State<AllResturantScreen>
     with SingleTickerProviderStateMixin {
   late TextEditingController _searchTextController;
   late TabController _tabController;
@@ -24,7 +24,7 @@ class _ResturantScreenState extends State<ResturantScreen>
   void initState() {
     super.initState();
     _searchTextController = TextEditingController();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -74,7 +74,7 @@ class _ResturantScreenState extends State<ResturantScreen>
               unselectedLabelColor: AppColors.black,
               labelStyle: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
-                fontSize: 10.sp,
+                fontSize: 14.sp,
                 color: AppColors.black,
               ),
               indicatorWeight: 0.5,
@@ -93,21 +93,6 @@ class _ResturantScreenState extends State<ResturantScreen>
                       ),
                       const Text(
                         'Offer',
-                      ),
-                    ],
-                  ),
-                ),
-                Tab(
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg_images/newly_add.svg',
-                      ),
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      const Text(
-                        'Newly Add',
                       ),
                     ],
                   ),
@@ -152,11 +137,19 @@ class _ResturantScreenState extends State<ResturantScreen>
             'All Resturant ',
             style: AppTextStyle.subTitle,
           ),
+          SizedBox(
+            height: 24.h,
+          ),
           ListView.builder(
+            itemCount: 10,
+            scrollDirection: Axis.vertical,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Container(
+                margin: EdgeInsetsDirectional.only(
+                  bottom: 20.h,
+                ),
                 width: double.infinity,
                 height: 109.h,
                 decoration: BoxDecoration(
@@ -166,24 +159,34 @@ class _ResturantScreenState extends State<ResturantScreen>
                   color: AppColors.white,
                 ),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 73.w,
-                      height: 65.h,
+                      margin: EdgeInsetsDirectional.only(
+                        start: 18.w,
+                      ),
+                      width: 70.w,
+                      height: 67.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                           7.r,
                         ),
                         color: AppColors.lightWhite,
                       ),
-                      child: Image.asset(
-                        'assets/svg_images/Macdonald.svg',
+                      child: CircleAvatar(
+                        backgroundColor: AppColors.lightWhite,
+                        radius: 24.r,
+                        child: SvgPicture.asset(
+                          'assets/svg_images/Macdonald.svg',
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: 9.w,
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Macdonald',
@@ -193,58 +196,64 @@ class _ResturantScreenState extends State<ResturantScreen>
                             color: AppColors.black,
                           ),
                         ),
-                        Row(
-                          children: [
-                            Row(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/svg_images/delivery.svg',
-                                  width: 16.w,
-                                  height: 14.h,
-                                ),
-                                SizedBox(
-                                  width: 6.8.w,
-                                ),
-                                Text(
-                                  'QAR 5 Delivery Fee',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 8.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.sameGrey,
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 3.h,
+                          ),
+                          child: Row(
+                            children: [
+                              Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    'assets/svg_images/delivery.svg',
+                                    width: 16.w,
+                                    height: 14.h,
                                   ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 6.w,
-                            ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.access_time,
-                                  color: AppColors.primary,
-                                  size: 14,
-                                ),
-                                SizedBox(
-                                  width: 6.8.w,
-                                ),
-                                Text(
-                                  '10-15 min',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 8.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.sameGrey,
+                                  SizedBox(
+                                    width: 6.8.w,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  Text(
+                                    'QAR 5 Delivery Fee',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 8.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors.sameGrey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 6.w,
+                              ),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.access_time,
+                                    color: AppColors.primary,
+                                    size: 14,
+                                  ),
+                                  SizedBox(
+                                    width: 6.8.w,
+                                  ),
+                                  Text(
+                                    '10-15 min',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 8.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors.sameGrey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                         Row(
                           children: [
                             Icon(
                               Icons.phone_outlined,
                               color: AppColors.primary,
+                              size: 14,
                             ),
                             Text(
                               '+97433099975',

@@ -3,6 +3,7 @@ import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class VerificationNumberRow extends StatelessWidget {
   Color backgroundColor = AppColors.lightWhite;
@@ -68,16 +69,18 @@ class VerificationNumberItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: AlignmentDirectional.center,
-      height: 34.h,
-      width: 34.w,
+      height: 54.h,
+      width: 48.w,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
+        borderRadius: BorderRadius.circular(
+          7.r,
+        ),
         color: backgroundColor,
         boxShadow: [
           BoxShadow(
-            color: AppColors.grey,
-            offset: Offset(0.w, 5.h),
-            blurRadius: 4,
+            color: const Color.fromRGBO(180, 166, 197, 0.34),
+            offset: Offset(0.w, 3.h),
+            blurRadius: 6,
           ),
         ],
       ),
@@ -91,7 +94,11 @@ class VerificationNumberItem extends StatelessWidget {
           }
         },
         textAlign: TextAlign.center,
-        style: AppTextStyle.headTitleBlack,
+        style: GoogleFonts.poppins(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w400,
+          color: AppColors.black,
+        ),
         decoration: const InputDecoration(
           border: InputBorder.none,
         ),

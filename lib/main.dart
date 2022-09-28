@@ -1,14 +1,16 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
+import 'package:camel_express_user/screen/all_restaurant_screen.dart';
+import 'package:camel_express_user/screen/auth/create_new_password_screen.dart';
 import 'package:camel_express_user/screen/auth/forget_password_email_screen.dart';
 import 'package:camel_express_user/screen/auth/forget_password_phone_screen.dart';
 import 'package:camel_express_user/screen/auth/forget_password_screen.dart';
 import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
+import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/category_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
-import 'package:camel_express_user/screen/home_test_screen.dart';
-import 'package:camel_express_user/screen/restaurant_screen.dart';
+import 'package:camel_express_user/screen/resturant_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-            appBarTheme: AppBarTheme(
+          appBarTheme: AppBarTheme(
               toolbarHeight: 40.h,
               iconTheme: const IconThemeData(
                 color: AppColors.black,
@@ -56,16 +58,16 @@ class MyApp extends StatelessWidget {
           // initialRoute: '/login_screen',
           initialRoute: '/home_screen',
           routes: {
-            // '/register_screen': (context) => const RegisterScreen(),
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
             '/forget_password_screen': (context) => const ForgetPasswordScreen(),
             '/forget_password_phone_screen': (context) => const ForgetPasswordPhoneScreen(),
             '/forget_password_email_screen': (context) => const ForgetPasswordEmailScreen(),
-            // '/test_screen': (context) => const TestScreen(),
-            '/home_test_screen': (context) => const HomeTestScreen(),
+            '/verification_screen': (context) => const VerificationScreen(),
+            '/create_new_password_screen': (context) => const CreateNewPassword(),
             '/home_screen': (context) => const HomeScreen(),
             '/category_screen': (context) => const CategoryScreen(),
+            '/all_resturant_screen': (context) => const AllResturantScreen(),
             '/resturant_screen': (context) => const ResturantScreen(),
           },
         );

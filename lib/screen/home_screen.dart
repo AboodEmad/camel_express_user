@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: ResturantNearYou(
               onPressed: () {
-                Navigator.pushNamed(context, '/resturant_screen');
+                Navigator.pushNamed(context, '/all_resturant_screen');
               },
               resturantName: 'Resturant Name',
               image: 'albaik',

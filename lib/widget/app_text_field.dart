@@ -7,19 +7,19 @@ import '../helpers/app_colors.dart';
 class AppTextField extends StatelessWidget {
   const AppTextField({
     Key? key,
+    required this.hint,
     this.prefixIcon,
     required this.keyboardType,
     required this.controller,
-    this.focusedBorderColor = Colors.grey,
+    this.focusedBorderColor = Colors.transparent,
     this.obscureText = false,
     this.suffixIcon,
-    this.width = 362,
-    this.backgroundColor = AppColors.white,
-    this.hintColor = AppColors.black,
-    // this.minLines,
-    // this.maxLines,
+    this.width = 330,
+    this.backgroundColor = AppColors.lightWhite,
+    this.hintColor = AppColors.primary,
   }) : super(key: key);
 
+  final String hint;
   final IconData? prefixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
@@ -30,24 +30,19 @@ class AppTextField extends StatelessWidget {
   final Color backgroundColor;
   final Color hintColor;
 
-  // final int? minLines;
-  // final int? maxLines;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 39.h,
+          height: 50.h,
           width: width.w,
           child: TextField(
-            // minLines: minLines,
-            // maxLines: maxLines,
             controller: controller,
             keyboardType: keyboardType,
             style: GoogleFonts.poppins(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               color: AppColors.black,
             ),
@@ -56,8 +51,13 @@ class AppTextField extends StatelessWidget {
               fillColor: backgroundColor,
               filled: true,
               contentPadding: EdgeInsets.zero,
+              hintText: hint,
+              hintStyle: GoogleFonts.poppins(
+                fontSize: 16.sp,
+                color: hintColor,
+                fontWeight: FontWeight.w400,
+              ),
               hintMaxLines: 1,
-              // prefixIcon: Icon(prefixIcon, color: const Color(0xFF40AA54),),
               suffixIcon: suffixIcon,
               prefix: SizedBox(width: 14.w,),
               enabledBorder: buildOutlineInputBorder(),

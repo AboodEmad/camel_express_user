@@ -70,14 +70,14 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-
-
-
   static TextStyle headTitle = GoogleFonts.poppins(
     color: AppColors.darkGrey,
     fontSize: 14.sp,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
   );
+
+
+
 
   static TextStyle subTitleOrder = GoogleFonts.poppins(
     color: AppColors.darkGrey,

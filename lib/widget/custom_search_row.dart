@@ -7,9 +7,13 @@ class CustomSearchRow extends StatelessWidget {
   const CustomSearchRow({
     Key? key,
     required this.controller,
+    required this.hintText,
+    required this.backgroundColor,
     required this.onPressed,
   }) : super(key: key);
   final TextEditingController controller;
+  final String hintText;
+  final Color backgroundColor;
   final void Function() onPressed;
 
   @override
@@ -28,10 +32,10 @@ class CustomSearchRow extends StatelessWidget {
               color: AppColors.black,
             ),
             decoration: InputDecoration(
-              fillColor: AppColors.lightWhite,
+              fillColor: backgroundColor,
               filled: true,
               contentPadding: EdgeInsets.zero,
-              hintText: 'Search',
+              hintText: hintText,
               hintStyle: GoogleFonts.poppins(
                 fontSize: 14.sp,
                 color: AppColors.sameGrey,

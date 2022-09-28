@@ -5,8 +5,10 @@ import 'package:camel_express_user/screen/auth/forget_password_phone_screen.dart
 import 'package:camel_express_user/screen/auth/forget_password_screen.dart';
 import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
+import 'package:camel_express_user/screen/category_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
 import 'package:camel_express_user/screen/home_test_screen.dart';
+import 'package:camel_express_user/screen/restaurant_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,6 +65,8 @@ class MyApp extends StatelessWidget {
             // '/test_screen': (context) => const TestScreen(),
             '/home_test_screen': (context) => const HomeTestScreen(),
             '/home_screen': (context) => const HomeScreen(),
+            '/category_screen': (context) => const CategoryScreen(),
+            '/resturant_screen': (context) => const ResturantScreen(),
           },
         );
       },

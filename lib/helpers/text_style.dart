@@ -64,16 +64,17 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
   );
 
-
-
-  static TextStyle headTitle = GoogleFonts.poppins(
-    color: AppColors.darkGrey,
+  static TextStyle headTitleBlack = GoogleFonts.poppins(
+    color: AppColors.black,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle headTitleBlack = GoogleFonts.poppins(
-    color: AppColors.black,
+
+
+
+  static TextStyle headTitle = GoogleFonts.poppins(
+    color: AppColors.darkGrey,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );

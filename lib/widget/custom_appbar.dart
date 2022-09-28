@@ -9,14 +9,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.notification,
+    required this.backgroundColor,
   }) : super(key: key);
   final String notification;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 110.h,
-      backgroundColor: AppColors.white,
+      backgroundColor: backgroundColor,
       // centerTitle: true,
       title: SizedBox(
         width: 170.w,

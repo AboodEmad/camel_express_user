@@ -45,6 +45,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         ),
         children: [
           CustomSearchRow(
+            width: 333,
             hintText: 'Search Category',
             controller: _searchTextController,
             onPressed: () {},

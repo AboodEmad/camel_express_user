@@ -72,7 +72,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       color: AppColors.white),
                   child: const Icon(
                     Icons.done,
-                    color: const Color(0xFF0FCC28),
+                    color: Color(0xFF0FCC28),
                     size: 20,
                   ),
                 ),

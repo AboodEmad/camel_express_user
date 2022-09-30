@@ -10,57 +10,19 @@ class CustomSearchRow extends StatelessWidget {
     required this.hintText,
     required this.backgroundColor,
     required this.onPressed,
+    required this.width,
   }) : super(key: key);
   final TextEditingController controller;
   final String hintText;
   final Color backgroundColor;
+  final double width;
   final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
-          width: 333.w,
-          height: 50.h,
-          child: TextField(
-            controller: controller,
-            keyboardType: TextInputType.text,
-            style: GoogleFonts.poppins(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.black,
-            ),
-            decoration: InputDecoration(
-              fillColor: backgroundColor,
-              filled: true,
-              contentPadding: EdgeInsets.zero,
-              hintText: hintText,
-              hintStyle: GoogleFonts.poppins(
-                fontSize: 14.sp,
-                color: AppColors.sameGrey,
-                fontWeight: FontWeight.w400,
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  7.r,
-                ),
-                borderSide: const BorderSide(
-                  color: Colors.transparent,
-                ),
-              ),
-              hintMaxLines: 1,
-              prefixIcon: const Icon(
-                Icons.search,
-                color: AppColors.sameGrey,
-              ),
-              suffixIcon: const Icon(
-                Icons.mic_none_outlined,
-                color: AppColors.sameGrey,
-              ),
-            ),
-          ),
-        ),
+        CustomSearch(width: width, controller: controller, backgroundColor: backgroundColor, hintText: hintText),
         SizedBox(
           width: 6.w,
         ),
@@ -83,6 +45,67 @@ class CustomSearchRow extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CustomSearch extends StatelessWidget {
+  const CustomSearch({
+    Key? key,
+    required this.controller,
+    required this.backgroundColor,
+    required this.hintText,
+    required this.width,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final Color backgroundColor;
+  final String hintText;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      // width: 333.w,
+      width: width.w,
+      height: 50.h,
+      child: TextField(
+        controller: controller,
+        keyboardType: TextInputType.text,
+        style: GoogleFonts.poppins(
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w500,
+          color: AppColors.black,
+        ),
+        decoration: InputDecoration(
+          fillColor: backgroundColor,
+          filled: true,
+          contentPadding: EdgeInsets.zero,
+          hintText: hintText,
+          hintStyle: GoogleFonts.poppins(
+            fontSize: 14.sp,
+            color: AppColors.sameGrey,
+            fontWeight: FontWeight.w400,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(
+              7.r,
+            ),
+            borderSide: const BorderSide(
+              color: Colors.transparent,
+            ),
+          ),
+          hintMaxLines: 1,
+          prefixIcon: const Icon(
+            Icons.search,
+            color: AppColors.sameGrey,
+          ),
+          suffixIcon: const Icon(
+            Icons.mic_none_outlined,
+            color: AppColors.sameGrey,
+          ),
+        ),
+      ),
     );
   }
 }

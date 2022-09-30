@@ -50,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         children: [
           CustomSearchRow(
+            width: 333,
             hintText: 'Search',
             controller: _searchTextController,
             onPressed: () {},
@@ -186,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: ResturantNearYou(
               onPressed: () {
-                Navigator.pushNamed(context, '/all_resturant_screen');
+                Navigator.pushNamed(context, '/resturant_screen');
               },
               resturantName: 'Resturant Name',
               image: 'albaik',
@@ -269,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 enlargeStrategy: CenterPageEnlargeStrategy.scale,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayAnimationDuration: const Duration(milliseconds: 700),
                 autoPlayCurve: Curves.decelerate,
                 enlargeCenterPage: true,
               ),

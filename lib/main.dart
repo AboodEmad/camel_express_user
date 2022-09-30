@@ -1,6 +1,5 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
-import 'package:camel_express_user/screen/all_restaurant_screen.dart';
 import 'package:camel_express_user/screen/auth/create_new_password_screen.dart';
 import 'package:camel_express_user/screen/auth/forget_password_email_screen.dart';
 import 'package:camel_express_user/screen/auth/forget_password_phone_screen.dart';
@@ -10,7 +9,8 @@ import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/category_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
-import 'package:camel_express_user/screen/resturant_screen.dart';
+import 'package:camel_express_user/screen/restaurant_screen.dart';
+import 'package:camel_express_user/screen/resturant_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,8 +67,8 @@ class MyApp extends StatelessWidget {
             '/create_new_password_screen': (context) => const CreateNewPassword(),
             '/home_screen': (context) => const HomeScreen(),
             '/category_screen': (context) => const CategoryScreen(),
-            '/all_resturant_screen': (context) => const AllResturantScreen(),
             '/resturant_screen': (context) => const ResturantScreen(),
+            '/resturant_details_screen': (context) => const ResturantDetailsScreen(),
           },
         );
       },

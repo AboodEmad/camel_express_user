@@ -47,9 +47,9 @@ class AppTextStyle {
   );
 
   static ButtonStyle textButtonStyle = TextButton.styleFrom(
-  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-  padding: EdgeInsets.zero,
-  minimumSize: Size(50.w, 30.h),
+    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    padding: EdgeInsets.zero,
+    minimumSize: Size(50.w, 30.h),
   );
 
   static TextStyle subTitleSmall = GoogleFonts.poppins(
@@ -76,14 +76,13 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
   );
 
-
-
-
-  static TextStyle subTitleOrder = GoogleFonts.poppins(
-    color: AppColors.darkGrey,
-    fontSize: 12.sp,
+  static TextStyle textSmall = GoogleFonts.poppins(
+    fontSize: 7.sp,
     fontWeight: FontWeight.w400,
+    color: AppColors.sameGrey,
   );
+
+
 
   static TextStyle orderDetailsMedium = GoogleFonts.poppins(
     color: AppColors.darkGrey,
@@ -114,5 +113,4 @@ class AppTextStyle {
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
-
 }

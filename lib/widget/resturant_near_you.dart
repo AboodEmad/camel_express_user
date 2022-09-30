@@ -34,7 +34,7 @@ class ResturantNearYou extends StatelessWidget {
           itemCount: 5,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 1,
-            mainAxisSpacing: 21.w,
+            mainAxisSpacing: 15.w,
             childAspectRatio: 200.h / 260.w,
           ),
           itemBuilder: (context, index) {
@@ -43,6 +43,7 @@ class ResturantNearYou extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
                     width: 260.w,
                     height: 128.h,
                     decoration: BoxDecoration(
@@ -62,6 +63,7 @@ class ResturantNearYou extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
                     width: 260.w,
                     height: 59.h,
                     decoration: BoxDecoration(
@@ -77,7 +79,7 @@ class ResturantNearYou extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: const Color.fromRGBO(0, 0, 0, 0.38),
-                          blurRadius: 6,
+                          blurRadius: 5,
                           offset: Offset(0, 6.h),
                           blurStyle: BlurStyle.outer,
                         ),

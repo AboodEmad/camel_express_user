@@ -9,14 +9,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ResturantScreen extends StatefulWidget {
-  const ResturantScreen({Key? key}) : super(key: key);
+class VendorScreen extends StatefulWidget {
+  const VendorScreen({Key? key}) : super(key: key);
 
   @override
-  State<ResturantScreen> createState() => _ResturantScreenState();
+  State<VendorScreen> createState() => _VendorScreenState();
 }
 
-class _ResturantScreenState extends State<ResturantScreen>
+class _VendorScreenState extends State<VendorScreen>
     with SingleTickerProviderStateMixin {
   late TextEditingController _searchTextController;
   late TabController _tabController;
@@ -39,7 +39,11 @@ class _ResturantScreenState extends State<ResturantScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F6FD),
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
+        title: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
+        ),
         backgroundColor: Color(0xFFF7F6FD),
         notification: '5',
       ),
@@ -151,7 +155,7 @@ class _ResturantScreenState extends State<ResturantScreen>
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, '/resturant_details_screen');
+                  Navigator.pushNamed(context, '/vendor_details_screen');
                 },
                 child: Container(
                   margin: EdgeInsetsDirectional.only(

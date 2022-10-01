@@ -39,7 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
+        title: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
+        ),
         backgroundColor: AppColors.white,
         notification: '5',
       ),
@@ -187,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: ResturantNearYou(
               onPressed: () {
-                Navigator.pushNamed(context, '/resturant_screen');
+                Navigator.pushNamed(context, '/vendor_screen');
               },
               resturantName: 'Resturant Name',
               image: 'albaik',

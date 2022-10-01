@@ -33,7 +33,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
+        title: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
+        ),
         backgroundColor: AppColors.lightGrey,
         notification: '5',
       ),

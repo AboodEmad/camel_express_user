@@ -9,12 +9,14 @@ import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/category_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
-import 'package:camel_express_user/screen/restaurant_screen.dart';
-import 'package:camel_express_user/screen/resturant_details_screen.dart';
+import 'package:camel_express_user/screen/notification_screen.dart';
+import 'package:camel_express_user/screen/vendor_details_screen.dart';
+import 'package:camel_express_user/screen/vendor_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-          appBarTheme: AppBarTheme(
+            appBarTheme: AppBarTheme(
               toolbarHeight: 40.h,
               iconTheme: const IconThemeData(
                 color: AppColors.black,
@@ -39,7 +41,11 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               elevation: 0,
               color: AppColors.white,
-              titleTextStyle: AppTextStyle.title,
+              titleTextStyle: GoogleFonts.poppins(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w500,
+                color: AppColors.black,
+              ),
             ),
           ),
           debugShowCheckedModeBanner: false,
@@ -60,15 +66,20 @@ class MyApp extends StatelessWidget {
           routes: {
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
-            '/forget_password_screen': (context) => const ForgetPasswordScreen(),
-            '/forget_password_phone_screen': (context) => const ForgetPasswordPhoneScreen(),
-            '/forget_password_email_screen': (context) => const ForgetPasswordEmailScreen(),
+            '/forget_password_screen': (context) =>
+                const ForgetPasswordScreen(),
+            '/forget_password_phone_screen': (context) =>
+                const ForgetPasswordPhoneScreen(),
+            '/forget_password_email_screen': (context) =>
+                const ForgetPasswordEmailScreen(),
             '/verification_screen': (context) => const VerificationScreen(),
-            '/create_new_password_screen': (context) => const CreateNewPassword(),
+            '/create_new_password_screen': (context) =>
+                const CreateNewPassword(),
             '/home_screen': (context) => const HomeScreen(),
             '/category_screen': (context) => const CategoryScreen(),
-            '/resturant_screen': (context) => const ResturantScreen(),
-            '/resturant_details_screen': (context) => const ResturantDetailsScreen(),
+            '/vendor_screen': (context) => const VendorScreen(),
+            '/vendor_details_screen': (context) => const VendorDetailsScreen(),
+            '/notification_screen': (context) => const NotificationScreen(),
           },
         );
       },

@@ -8,9 +8,11 @@ import '../helpers/text_style.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
+    required this.title,
     required this.notification,
     required this.backgroundColor,
   }) : super(key: key);
+  final Widget title;
   final String notification;
   final Color backgroundColor;
 
@@ -22,10 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: SizedBox(
         width: 170.w,
         height: 70.h,
-        child: Image.asset(
-          'assets/images/logo.png',
-          fit: BoxFit.cover,
-        ),
+        child: title,
       ),
       actions: [
         IconButton(
@@ -39,25 +38,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.zero,
           onPressed: () {},
           icon: Stack(
+            alignment: AlignmentDirectional.topEnd,
             children: [
-              SvgPicture.asset(
-                'assets/svg_images/notification.svg',
-                width: 22.5.w,
-                height: 26.h,
+              SizedBox(
+                height: 32.h,
+                child: SvgPicture.asset(
+                  'assets/svg_images/notification.svg',
+                  width: 22.5.w,
+                  height: 26.h,
+                ),
               ),
-              Positioned(
-                left: 9.w,
-                child: CircleAvatar(
-                  backgroundColor: const Color(0xFFFF3636),
-                  radius: 6.r,
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    notification,
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 7.sp,
-                      color: AppColors.white,
-                    ),
+              CircleAvatar(
+                backgroundColor: const Color(0xFFFF3636),
+                radius: 6.r,
+                child: Text(
+                  textAlign: TextAlign.center,
+                  notification,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 7.sp,
+                    color: AppColors.white,
                   ),
                 ),
               ),

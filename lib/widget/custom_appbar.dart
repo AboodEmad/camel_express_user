@@ -21,22 +21,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: 110.h,
       backgroundColor: backgroundColor,
-      title: SizedBox(
-        width: 170.w,
-        height: 70.h,
-        child: title,
-      ),
+      title: title,
       actions: [
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/favorites_screen');
+          },
           icon: const Icon(
             Icons.favorite_outline,
           ),
         ),
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/notification_screen');
+          },
           icon: Stack(
             alignment: AlignmentDirectional.topEnd,
             children: [

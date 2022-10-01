@@ -40,9 +40,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: CustomAppBar(
-        title: Image.asset(
-          'assets/images/logo.png',
-          fit: BoxFit.cover,
+        title: SizedBox(
+          width: 170.w,
+          height: 70.h,
+          child: Image.asset(
+            'assets/images/logo.png',
+            fit: BoxFit.cover,
+          ),
         ),
         backgroundColor: AppColors.white,
         notification: '5',
@@ -202,7 +206,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           TitleAndViewAll(
             title: 'Popular Stars',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/stars_screen');
+            },
           ),
           Padding(
             padding: EdgeInsetsDirectional.only(

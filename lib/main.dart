@@ -8,8 +8,10 @@ import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/category_screen.dart';
+import 'package:camel_express_user/screen/favorites_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
 import 'package:camel_express_user/screen/notification_screen.dart';
+import 'package:camel_express_user/screen/stars_screen.dart';
 import 'package:camel_express_user/screen/vendor_details_screen.dart';
 import 'package:camel_express_user/screen/vendor_screen.dart';
 import 'package:flutter/material.dart';
@@ -80,6 +82,8 @@ class MyApp extends StatelessWidget {
             '/vendor_screen': (context) => const VendorScreen(),
             '/vendor_details_screen': (context) => const VendorDetailsScreen(),
             '/notification_screen': (context) => const NotificationScreen(),
+            '/stars_screen': (context) => const StarsScreen(),
+            '/favorites_screen': (context) => const FavoritesScreen(),
           },
         );
       },

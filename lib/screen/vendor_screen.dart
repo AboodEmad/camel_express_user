@@ -40,9 +40,13 @@ class _VendorScreenState extends State<VendorScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF7F6FD),
       appBar: CustomAppBar(
-        title: Image.asset(
-          'assets/images/logo.png',
-          fit: BoxFit.cover,
+        title: SizedBox(
+          width: 170.w,
+          height: 70.h,
+          child: Image.asset(
+            'assets/images/logo.png',
+            fit: BoxFit.cover,
+          ),
         ),
         backgroundColor: Color(0xFFF7F6FD),
         notification: '5',

@@ -7,14 +7,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+class StarsScreen extends StatefulWidget {
+  const StarsScreen({Key? key}) : super(key: key);
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<StarsScreen> createState() => _StarsScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _StarsScreenState extends State<StarsScreen> {
   late TextEditingController _searchTextController;
 
   @override
@@ -33,14 +33,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.lightGrey,
-      appBar: CustomAppBar(
-        title: SizedBox(
-          width: 170.w,
-          height: 70.h,
-          child: Image.asset(
-            'assets/images/logo.png',
-            fit: BoxFit.cover,
-          ),
+      appBar: const CustomAppBar(
+        title: Text(
+          'Stars',
         ),
         backgroundColor: AppColors.lightGrey,
         notification: '5',
@@ -54,20 +49,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
         children: [
           CustomSearchRow(
             width: 333,
-            hintText: 'Search Category',
+            hintText: 'Search Star',
             controller: _searchTextController,
             onPressed: () {},
             backgroundColor: const Color(0xFFEBEBEB),
           ),
-          Padding(
-            padding: EdgeInsetsDirectional.only(
-              top: 35.h,
-              bottom: 33.h,
-            ),
-            child: Text(
-              'Choose Category',
-              style: AppTextStyle.subTitle,
-            ),
+          SizedBox(
+            height: 20.h,
           ),
           GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
@@ -76,45 +64,47 @@ class _CategoryScreenState extends State<CategoryScreen> {
               itemCount: 10,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 40.h,
-                childAspectRatio: 207.h / 151.w,
+                mainAxisSpacing: 35.h,
+                childAspectRatio: 185.h / 135.w,
               ),
               itemBuilder: (context, index) {
                 return Center(
                   child: Container(
-                    width: 151.w,
-                    height: 207.h,
+                    width: 135.w,
+                    height: 212.h,
                     decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color.fromRGBO(6, 13, 217, 0.05),
-                          blurRadius: 8,
-                          offset: Offset(0, 5.h),
-                        ),
-                      ],
                       borderRadius: BorderRadius.circular(
-                        20.r,
+                        10.r,
                       ),
                       color: AppColors.white,
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 9.w,
-                      vertical: 9.h,
+                      vertical: 11.h,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset(
-                          'assets/svg_images/clothes.svg',
-                          width: 60.w,
-                          height: 76.h,
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 5.h),
+                          width: 118.w,
+                          height: 158.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            color: AppColors.lightWhite,
+                          ),
+                          child: Image.asset(
+                            'assets/images/stars.png',
+                          ),
                         ),
-                        SizedBox(height: 25.h,),
+                        SizedBox(
+                          height: 8.h,
+                        ),
                         Text(
-                          'Clothes',
+                          'Narine Beauty',
                           style: GoogleFonts.poppins(
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
                         ),

@@ -13,9 +13,11 @@ class ColumnAppTextField extends StatelessWidget {
     required this.keyboardType,
     required this.controller,
     this.focusedBorderColor = Colors.transparent,
+    this.shadowColor = const Color.fromRGBO(0, 0, 0, 0.16),
     this.obscureText = false,
     this.suffixIcon,
     this.width = 324,
+    this.height = 50,
     // this.minLines,
     // this.maxLines,
   }) : super(key: key);
@@ -25,9 +27,11 @@ class ColumnAppTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final TextEditingController controller;
   final Color focusedBorderColor;
+  final Color shadowColor;
   final Widget? suffixIcon;
   final bool obscureText;
   final double width;
+  final double height;
 
   // final int? minLines;
   // final int? maxLines;
@@ -48,13 +52,13 @@ class ColumnAppTextField extends StatelessWidget {
               height: 7.h,
             ),
             SizedBox(
-              height: 50.h,
+              height: height.h,
               width: width.w,
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: const Color.fromRGBO(0, 0, 0, 0.16),
+                      color: shadowColor,
                       blurRadius: 6,
                       offset: Offset(0, 3.h),
                     ),

@@ -8,6 +8,8 @@ import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/category_screen.dart';
+import 'package:camel_express_user/screen/change_password_screen.dart';
+import 'package:camel_express_user/screen/edit_profile_screen.dart';
 import 'package:camel_express_user/screen/favorites_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
 import 'package:camel_express_user/screen/notification_screen.dart';
@@ -86,6 +88,8 @@ class MyApp extends StatelessWidget {
             '/stars_screen': (context) => const StarsScreen(),
             '/favorites_screen': (context) => const FavoritesScreen(),
             '/profile_screen': (context) => const ProfileScreen(),
+            '/change_password_screen': (context) => const ChangePasswordScreen(),
+            '/edit_profile_screen': (context) => const EditProfileScreen(),
           },
         );
       },

@@ -7,7 +7,7 @@ import '../helpers/app_colors.dart';
 class AppTextField extends StatelessWidget {
   const AppTextField({
     Key? key,
-    required this.hint,
+    this.hint,
     this.prefixIcon,
     required this.keyboardType,
     required this.controller,
@@ -15,11 +15,12 @@ class AppTextField extends StatelessWidget {
     this.obscureText = false,
     this.suffixIcon,
     this.width = 330,
+    this.height = 50,
     this.backgroundColor = AppColors.lightWhite,
     this.hintColor = AppColors.primary,
   }) : super(key: key);
 
-  final String hint;
+  final String? hint;
   final IconData? prefixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
@@ -27,6 +28,7 @@ class AppTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final double width;
+  final double height;
   final Color backgroundColor;
   final Color hintColor;
 
@@ -36,7 +38,7 @@ class AppTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 50.h,
+          height: height.h,
           width: width.w,
           child: TextField(
             controller: controller,

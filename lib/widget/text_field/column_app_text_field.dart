@@ -1,9 +1,8 @@
+import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../helpers/app_colors.dart';
 
 class ColumnAppTextField extends StatelessWidget {
   const ColumnAppTextField({

@@ -1,9 +1,9 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
-import 'package:camel_express_user/widget/custom_appbar.dart';
+import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
 import 'package:camel_express_user/widget/custom_search_row.dart';
-import 'package:camel_express_user/widget/resturant_near_you.dart';
 import 'package:camel_express_user/widget/title_and_view_all.dart';
+import 'package:camel_express_user/widget/vendor_near_you.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 14.h,
               bottom: 28.h,
             ),
-            child: ResturantNearYou(
+            child: VendorNearYou(
               onPressed: () {
                 Navigator.pushNamed(context, '/vendor_screen');
               },

@@ -1,6 +1,6 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
-import 'package:camel_express_user/widget/custom_appbar.dart';
+import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

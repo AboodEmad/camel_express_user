@@ -1,8 +1,8 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
-import 'package:camel_express_user/widget/app_text_button.dart';
-import 'package:camel_express_user/widget/column_app_text_field.dart';
-import 'package:camel_express_user/widget/image_logo.dart';
+import 'package:camel_express_user/widget/text_button/app_text_button.dart';
+import 'package:camel_express_user/widget/text_field/column_app_text_field.dart';
+import 'package:camel_express_user/widget/logo/image_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,8 +1,8 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
-import 'package:camel_express_user/widget/custom_appbar.dart';
+import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
 import 'package:camel_express_user/widget/custom_search_row.dart';
-import 'package:camel_express_user/widget/resturant_near_you.dart';
+import 'package:camel_express_user/widget/vendor_near_you.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,7 +48,7 @@ class _VendorScreenState extends State<VendorScreen>
             fit: BoxFit.cover,
           ),
         ),
-        backgroundColor: Color(0xFFF7F6FD),
+        backgroundColor: const Color(0xFFF7F6FD),
         notification: '5',
       ),
       body: ListView(
@@ -135,7 +135,7 @@ class _VendorScreenState extends State<VendorScreen>
               top: 14.h,
               bottom: 31.h,
             ),
-            child: ResturantNearYou(
+            child: VendorNearYou(
               onPressed: () {},
               resturantName: 'Resturant Name',
               image: 'albaik',

@@ -327,7 +327,7 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen>
                   image: 'pizza',
                   name: 'Pizza',
                   star: 5,
-                  rate: '5.0',
+                  rate: 5.0,
                   quantity: '+100',
                   location: 'Qatar , Doha',
                 );
@@ -383,7 +383,7 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen>
                 image: 'steak',
                 name: 'Steak Beef',
                 starNumber: 5,
-                rate: '5.0',
+                rate: 5.0,
                 deliveryFee: '5',
                 quantity: '+100',
                 price: '30.00',

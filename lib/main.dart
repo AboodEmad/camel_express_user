@@ -15,7 +15,7 @@ import 'package:camel_express_user/screen/favorite/favorites_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
 import 'package:camel_express_user/screen/notification/notification_screen.dart';
 import 'package:camel_express_user/screen/profile_screen.dart';
-import 'package:camel_express_user/screen/stars_screen.dart';
+import 'package:camel_express_user/screen/stars/stars_screen.dart';
 import 'package:camel_express_user/screen/vendor/vendor_details_screen.dart';
 import 'package:camel_express_user/screen/vendor/vendor_screen.dart';
 import 'package:flutter/material.dart';

@@ -242,6 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
             ),
           ),
+          SizedBox(height: 60.h,),
         ],
       ),
     );
@@ -323,7 +324,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             }).toList(),
-          )
+          ),
         ],
       ),
     );

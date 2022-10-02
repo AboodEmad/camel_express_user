@@ -20,7 +20,7 @@ class IsFavoriteItem extends StatelessWidget {
   }) : super(key: key);
   final String image;
   final String name;
-  final String rate;
+  final double rate;
   final String quantity;
   final String deliveryFee;
   final String price;
@@ -96,7 +96,7 @@ class IsFavoriteItem extends StatelessWidget {
                       ),
                       SizedBox(width: 2.w),
                       Text(
-                        rate,
+                        rate.toString(),
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           fontSize: 8.sp,

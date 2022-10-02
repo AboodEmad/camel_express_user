@@ -37,7 +37,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF7F6FD),
+      backgroundColor: const Color(0xFFF7F6FD),
       appBar: CustomAppBar(
         title: SizedBox(
           width: 170.w,
@@ -48,7 +48,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ),
         notification: '5',
-        backgroundColor: Color(0xFFF7F6FD),
+        backgroundColor: const Color(0xFFF7F6FD),
       ),
       body: ListView(
         children: [
@@ -78,7 +78,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         color: AppColors.black,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'QAR 30.00',
                       style: GoogleFonts.poppins(
@@ -112,7 +112,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           color: const Color(0xFF737373),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       SvgPicture.asset(
                         'assets/svg_images/clock.svg',
                         width: 24.w,

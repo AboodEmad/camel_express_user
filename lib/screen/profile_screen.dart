@@ -272,8 +272,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   CircleAvatar(
                     radius: 15.5.r,
-                    backgroundColor: Color(0xFFFF0000),
-                    child: RotatedBox(
+                    backgroundColor: const Color(0xFFFF0000),
+                    child: const RotatedBox(
                       quarterTurns: 2,
                       child: Icon(
                         Icons.logout,

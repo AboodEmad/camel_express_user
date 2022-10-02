@@ -2,7 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/screen/category/category_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
-import 'package:camel_express_user/screen/notification/notification_screen.dart';
+import 'package:camel_express_user/screen/product_details_screen.dart';
 import 'package:camel_express_user/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -86,7 +86,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<Widget> pages = [
     const HomeScreen(),
     const CategoryScreen(),
-    const NotificationScreen(),
+    const ProductDetailsScreen(),
     const ProfileScreen(),
   ];
 }

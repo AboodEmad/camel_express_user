@@ -52,12 +52,6 @@ class AppTextStyle {
     minimumSize: Size(50.w, 30.h),
   );
 
-  static TextStyle subTitleSmall = GoogleFonts.poppins(
-    color: AppColors.grey,
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
-  );
-
   static TextStyle headTitleSmall = GoogleFonts.poppins(
     color: AppColors.grey,
     fontSize: 12.sp,

@@ -15,6 +15,7 @@ class IsFavoriteItem extends StatelessWidget {
     required this.quantity,
     required this.deliveryFee,
     required this.price,
+    required this.starNumber,
     required this.onPressed,
   }) : super(key: key);
   final String image;
@@ -23,6 +24,7 @@ class IsFavoriteItem extends StatelessWidget {
   final String quantity;
   final String deliveryFee;
   final String price;
+  final double starNumber;
   final void Function() onPressed;
 
   @override
@@ -79,7 +81,7 @@ class IsFavoriteItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RatingBar.builder(
-                        initialRating: 5,
+                        initialRating: starNumber,
                         minRating: 1,
                         direction: Axis.horizontal,
                         itemSize: 9,

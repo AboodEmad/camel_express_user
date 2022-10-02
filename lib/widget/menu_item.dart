@@ -14,12 +14,14 @@ class CustomMenuItem extends StatelessWidget {
     required this.rate,
     required this.quantity,
     required this.location,
+    required this.star,
   }) : super(key: key);
   final String image;
   final String name;
   final String rate;
   final String quantity;
   final String location;
+  final double star;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +97,7 @@ class CustomMenuItem extends StatelessWidget {
                 child: Row(
                   children: [
                     RatingBar.builder(
-                      initialRating: 5,
+                      initialRating: star,
                       minRating: 1,
                       direction: Axis.horizontal,
                       itemSize: 9,

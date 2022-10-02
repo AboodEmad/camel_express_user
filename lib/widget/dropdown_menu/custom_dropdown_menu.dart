@@ -33,7 +33,7 @@ class _ColumnDropdownMenuState extends State<ColumnDropdownMenu> {
           style: AppTextStyle.subTitleGrey,
         ),
         SizedBox(
-          height: 7.h,
+          height: 9.h,
         ),
         Container(
           height: 50.h,

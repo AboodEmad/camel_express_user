@@ -89,7 +89,7 @@ class _ForgetPasswordEmailScreenState extends State<ForgetPasswordEmailScreen> {
               ),
               child: Text(
                 'You Will Receive 4 Digit Code To Verify Next',
-                style: AppTextStyle.subTitleSmall,
+                style: AppTextStyle.subTitleGrey,
               ),
             ),
             Container(

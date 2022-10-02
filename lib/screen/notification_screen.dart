@@ -33,7 +33,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           scrollDirection: Axis.vertical,
           itemBuilder: (context, index) {
             return const NotificationItem(
-              image: 'profile',
+              image: 'user',
               name: 'User Name',
               title: 'Dear user, you can take advantage of the',
               subTitle: 'discount code',

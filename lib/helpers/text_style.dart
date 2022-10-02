@@ -96,21 +96,10 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
   );
 
-  // static TextStyle subTitleBlack = GoogleFonts.poppins(
-  //   color: AppColors.black,
-  //   fontSize: 12.sp,
-  //   fontWeight: FontWeight.w500,
-  // );
-
-  static TextStyle orderApprove = GoogleFonts.poppins(
-    color: const Color(0xFF28DB34),
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w500,
+  static TextStyle listTileTitle = GoogleFonts.poppins(
+    color: const Color(0xFF515151),
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
   );
 
-  static TextStyle orderReady = GoogleFonts.poppins(
-    color: const Color(0xFFE19A3C),
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w500,
-  );
 }

@@ -11,6 +11,7 @@ import 'package:camel_express_user/screen/category_screen.dart';
 import 'package:camel_express_user/screen/favorites_screen.dart';
 import 'package:camel_express_user/screen/home_screen.dart';
 import 'package:camel_express_user/screen/notification_screen.dart';
+import 'package:camel_express_user/screen/profile_screen.dart';
 import 'package:camel_express_user/screen/stars_screen.dart';
 import 'package:camel_express_user/screen/vendor_details_screen.dart';
 import 'package:camel_express_user/screen/vendor_screen.dart';
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
           locale: const Locale('en'),
           // locale: Locale(Provider.of<LanguagesProvider>(context).languages),
           // initialRoute: '/login_screen',
-          initialRoute: '/home_screen',
+          initialRoute: '/profile_screen',
           routes: {
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
@@ -84,6 +85,7 @@ class MyApp extends StatelessWidget {
             '/notification_screen': (context) => const NotificationScreen(),
             '/stars_screen': (context) => const StarsScreen(),
             '/favorites_screen': (context) => const FavoritesScreen(),
+            '/profile_screen': (context) => const ProfileScreen(),
           },
         );
       },

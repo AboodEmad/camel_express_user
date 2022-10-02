@@ -7,7 +7,6 @@ import 'package:camel_express_user/widget/dropdown_menu/custom_dropdown_menu.dar
 import 'package:camel_express_user/widget/logo/image_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -80,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           horizontal: 20.w,
         ),
         children: [
-          Center(child: const ImageLogo()),
+          const Center(child: ImageLogo()),
           Padding(
             padding: EdgeInsetsDirectional.only(
               top: 30.h,
@@ -188,7 +187,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Center(
               child: ColumnAppTextField(
                 title: 'Phone Number',
-                keyboardType: TextInputType.numberWithOptions(
+                keyboardType: const TextInputType.numberWithOptions(
                   decimal: false,
                 ),
                 controller: _phoneTextController,
@@ -198,7 +197,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
           Center(
             child: AppTextButton(
               text: 'Sign Up',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/bottom_nav_screen');
+              },
             ),
           ),
           Padding(
@@ -210,7 +211,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'I\'m a new user?',
+                  'I am already a member?',
                   style: AppTextStyle.subTitleBlack,
                 ),
                 SizedBox(
@@ -221,11 +222,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () {
                     Navigator.pushReplacementNamed(
                       context,
-                      '/register_screen',
+                      '/login_screen',
                     );
                   },
                   child: Text(
-                    'Sign up',
+                    'Sign In',
                     style: AppTextStyle.subTitleButton,
                   ),
                 ),

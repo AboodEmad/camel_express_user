@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: AppTextButton(
                 text: 'Sign In',
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/home_screen');
+                  Navigator.pushReplacementNamed(context, '/bottom_nav_screen');
                 },
               ),
             ),

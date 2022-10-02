@@ -6,6 +6,7 @@ import 'package:camel_express_user/screen/auth/forget_password_screen.dart';
 import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav_screen.dart';
 import 'package:camel_express_user/screen/category/category_screen.dart';
 import 'package:camel_express_user/screen/profile/change_password_screen.dart';
 import 'package:camel_express_user/screen/profile/edit_profile_screen.dart';
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
           locale: const Locale('en'),
           // locale: Locale(Provider.of<LanguagesProvider>(context).languages),
           // initialRoute: '/login_screen',
-          initialRoute: '/profile_screen',
+          initialRoute: '/bottom_nav_bar_screen',
           routes: {
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
@@ -89,6 +90,7 @@ class MyApp extends StatelessWidget {
             '/profile_screen': (context) => const ProfileScreen(),
             '/change_password_screen': (context) => const ChangePasswordScreen(),
             '/edit_profile_screen': (context) => const EditProfileScreen(),
+            '/bottom_nav_screen': (context) => const BottomNavScreen(),
           },
         );
       },

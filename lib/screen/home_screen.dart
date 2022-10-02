@@ -259,72 +259,73 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget sliderImages() {
     return SizedBox(
-        width: double.infinity,
-        height: 290.h,
-        child: Column(
-          children: [
-            CarouselSlider(
-              options: CarouselOptions(
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    count = index;
-                  });
-                },
-                aspectRatio: 2,
-                viewportFraction: 1,
-                height: 250.h,
-                pageSnapping: true,
-                initialPage: 0,
-                enableInfiniteScroll: true,
-                reverse: false,
-                enlargeStrategy: CenterPageEnlargeStrategy.scale,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 3),
-                autoPlayAnimationDuration: const Duration(milliseconds: 700),
-                autoPlayCurve: Curves.decelerate,
-                enlargeCenterPage: true,
-              ),
-              items: advertiseImage
-                  .map(
-                    (item) => Container(
-                      height: 250.h,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            7.r,
-                          ),
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(item),
-                          )),
-                    ),
-                  )
-                  .toList(),
+      width: double.infinity,
+      height: 290.h,
+      child: Column(
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+              onPageChanged: (index, reason) {
+                setState(() {
+                  count = index;
+                });
+              },
+              aspectRatio: 2,
+              viewportFraction: 1,
+              height: 250.h,
+              pageSnapping: true,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              reverse: false,
+              enlargeStrategy: CenterPageEnlargeStrategy.scale,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 3),
+              autoPlayAnimationDuration: const Duration(milliseconds: 700),
+              autoPlayCurve: Curves.decelerate,
+              enlargeCenterPage: true,
             ),
-            SizedBox(
-              height: 4.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: advertiseImage.asMap().entries.map((entry) {
-                return GestureDetector(
-                  onTap: () => _carouselController.animateToPage(entry.key),
-                  child: Container(
-                    width: count != entry.key ? 8.0 : 12,
-                    height: count != entry.key ? 8.0 : 12,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 4.0),
+            items: advertiseImage
+                .map(
+                  (item) => Container(
+                    height: 250.h,
+                    width: double.infinity,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: (Theme.of(context).brightness == Brightness.dark
-                                ? Colors.blueGrey.shade50
-                                : AppColors.primary)
-                            .withOpacity(count == entry.key ? 0.9 : 0.4)),
+                        borderRadius: BorderRadius.circular(
+                          7.r,
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(item),
+                        )),
                   ),
-                );
-              }).toList(),
-            )
-          ],
-        ));
+                )
+                .toList(),
+          ),
+          SizedBox(
+            height: 4.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: advertiseImage.asMap().entries.map((entry) {
+              return GestureDetector(
+                onTap: () => _carouselController.animateToPage(entry.key),
+                child: Container(
+                  width: count != entry.key ? 8.0 : 12,
+                  height: count != entry.key ? 8.0 : 12,
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 4.0),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: (Theme.of(context).brightness == Brightness.dark
+                              ? Colors.blueGrey.shade50
+                              : AppColors.primary)
+                          .withOpacity(count == entry.key ? 0.9 : 0.4)),
+                ),
+              );
+            }).toList(),
+          )
+        ],
+      ),
+    );
   }
 }

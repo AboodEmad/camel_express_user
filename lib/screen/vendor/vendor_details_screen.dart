@@ -1,6 +1,6 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/custom_search_row.dart';
+import 'package:camel_express_user/widget/custom_search.dart';
 import 'package:camel_express_user/widget/is_favorite_item.dart';
 import 'package:camel_express_user/widget/menu_item.dart';
 import 'package:camel_express_user/widget/popular_item.dart';

@@ -1,5 +1,4 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
-import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,13 +9,29 @@ class ColumnDropdownMenu extends StatefulWidget {
     required this.title,
     required this.itemsTitle,
     required this.valueTitle,
-    // required this.onChanged,
+    this.height = 50,
+    this.backgroundColor = AppColors.lightWhite,
+    this.titleColor = AppColors.grey,
+    this.fontWeight = FontWeight.w400,
+    this.sizedBoxHeight = 7,
+    this.shadowColor = const Color.fromRGBO(0, 0, 0, 0.16),
+    this.icon = const Icon(
+      Icons.arrow_drop_down_outlined,
+      color: AppColors.primary,
+      size: 35,
+    ),
   }) : super(key: key);
 
   final String title;
   final List itemsTitle;
   late int? valueTitle;
-  // final void Function(int?) onChanged;
+  final double height;
+  final Color backgroundColor;
+  final Widget icon;
+  final Color titleColor;
+  final FontWeight fontWeight;
+  final double sizedBoxHeight;
+  final Color shadowColor;
 
   @override
   State<ColumnDropdownMenu> createState() => _ColumnDropdownMenuState();
@@ -30,20 +45,24 @@ class _ColumnDropdownMenuState extends State<ColumnDropdownMenu> {
       children: [
         Text(
           widget.title,
-          style: AppTextStyle.subTitleGrey,
+          style: GoogleFonts.poppins(
+            color: widget.titleColor,
+            fontSize: 14.sp,
+            fontWeight: widget.fontWeight,
+          ),
         ),
         SizedBox(
-          height: 9.h,
+          height: widget.sizedBoxHeight.h,
         ),
         Container(
-          height: 50.h,
+          height: widget.height.h,
           width: 324.w,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7.r),
-            color: AppColors.lightWhite,
+            color: widget.backgroundColor,
             boxShadow: [
               BoxShadow(
-                color: const Color.fromRGBO(0, 0, 0, 0.16),
+                color: widget.shadowColor,
                 blurRadius: 6,
                 offset: Offset(0, 3.h),
               ),
@@ -53,8 +72,8 @@ class _ColumnDropdownMenuState extends State<ColumnDropdownMenu> {
             isExpanded: true,
             underline: const SizedBox(),
             onChanged: (int? value) {
-                  setState(() => widget.valueTitle = value!);
-                },
+              setState(() => widget.valueTitle = value!);
+            },
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(7.r),
               topLeft: Radius.circular(7.r),
@@ -66,23 +85,22 @@ class _ColumnDropdownMenuState extends State<ColumnDropdownMenu> {
               padding: EdgeInsetsDirectional.only(
                 end: 20.w,
               ),
-              child: const Icon(
-                Icons.arrow_drop_down_outlined,
-                color: AppColors.primary,
-                size: 35,
-              ),
+              child: widget.icon,
             ),
             value: widget.valueTitle,
             items: widget.itemsTitle.map(
               (item) {
                 return DropdownMenuItem<int>(
                   value: item.id,
-                  child: Text(
-                    item.title,
-                    style: GoogleFonts.poppins(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.normal,
-                      color: const Color(0xFF16162E),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.only(start: 16.w),
+                    child: Text(
+                      item.title,
+                      style: GoogleFonts.poppins(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.black,
+                      ),
                     ),
                   ),
                 );

@@ -16,6 +16,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  String _language = 'en';
 
   @override
   void initState() {
@@ -43,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             color: AppColors.white,
             padding: EdgeInsetsDirectional.only(
               start: 20.w,
-              bottom: 25.h,
+              bottom: 20.h,
             ),
             child: Row(
               children: [
@@ -51,34 +52,40 @@ class _ProfileScreenState extends State<ProfileScreen>
                   alignment: AlignmentDirectional.bottomEnd,
                   children: [
                     Container(
-                      width: 58.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9.r),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Image.asset(
-                        'assets/images/profile.png',
-                        fit: BoxFit.cover,
+                      width: 70.w,
+                      height: 75.h,
+                      padding: EdgeInsetsDirectional.only(end: 6.w,bottom: 5.h),
+                      child: Container(
+                        width: 58.w,
+                        height: 58.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9.r),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          'assets/images/profile.png',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     InkWell(
                       onTap: () {},
                       child: Container(
                         alignment: AlignmentDirectional.center,
-                        width: 18.w,
-                        height: 18.h,
+                        width: 20.w,
+                        height: 20.h,
                         decoration: BoxDecoration(
+                          color: AppColors.white,
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: AppColors.primary,
-                            width: 1.w,
+                            width: 1.2.w,
                           ),
                         ),
                         child: SvgPicture.asset(
                           'assets/svg_images/edit_image_icon.svg',
-                          width: 7.5.w,
-                          height: 7.5.h,
+                          width: 8.5.w,
+                          height: 8.5.h,
                         ),
                       ),
                     ),
@@ -210,44 +217,41 @@ class _ProfileScreenState extends State<ProfileScreen>
                           'Language',
                           style: AppTextStyle.listTileTitle,
                         ),
-                        Spacer(),
-                        SizedBox(
-                          height: 22.h,
-                          width: 100.w,
-                          child: TabBar(
-                            onTap: (int index) {
-                              setState(() {
-                                _tabController.index = index;
-                              });
+                        const Spacer(),
+                        Expanded(
+                          child: RadioListTile<String>(
+                            contentPadding: EdgeInsetsDirectional.zero,
+                            activeColor: const Color(0xFF40AA54),
+                            title: Text(
+                              'En',
+                              style: GoogleFonts.poppins(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            value: 'en',
+                            groupValue: _language,
+                            onChanged: (String? value) {
+                              setState(() => _language = value!);
                             },
-                            indicator: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                4.r,
+                          ),
+                        ),
+                        Expanded(
+                          child: RadioListTile<String>(
+                            contentPadding: EdgeInsetsDirectional.zero,
+                            activeColor: const Color(0xFF40AA54),
+                            title: Text(
+                              'عربي',
+                              style: GoogleFonts.poppins(
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w400,
                               ),
-                              color: AppColors.lightGrey,
                             ),
-                            indicatorSize: TabBarIndicatorSize.tab,
-                            labelColor: AppColors.white,
-                            unselectedLabelColor: AppColors.black,
-                            labelStyle: GoogleFonts.poppins(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 10.sp,
-                              color: AppColors.black,
-                            ),
-                            indicatorWeight: 0.5,
-                            controller: _tabController,
-                            tabs: [
-                              Tab(
-                                child: Text(
-                                  'En',
-                                ),
-                              ),
-                              Tab(
-                                child: Text(
-                                  'عربي',
-                                ),
-                              ),
-                            ],
+                            value: 'ar',
+                            groupValue: _language,
+                            onChanged: (String? value) {
+                              setState(() => _language = value!);
+                            },
                           ),
                         ),
                         SizedBox(

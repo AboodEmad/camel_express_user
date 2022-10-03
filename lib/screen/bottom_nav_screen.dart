@@ -86,7 +86,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<Widget> pages = [
     const HomeScreen(),
     const CategoryScreen(),
-    const ProductDetailsScreen(),
+    const ProductScreen(),
     const ProfileScreen(),
   ];
 }

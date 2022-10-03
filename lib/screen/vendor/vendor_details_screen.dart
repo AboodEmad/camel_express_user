@@ -387,7 +387,9 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen>
                 deliveryFee: '5',
                 quantity: '+100',
                 price: '30.00',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/product_details_screen');
+                },
               );
             },
           ),

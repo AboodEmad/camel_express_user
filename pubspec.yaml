@@ -43,6 +43,7 @@ dependencies:
 
   animated_bottom_navigation_bar: ^0.3.2
   flutter_rating_bar: ^4.0.1
+  toggle_switch: ^2.0.1
   flutter_svg: ^1.1.5
   carousel_slider: ^4.0.0
   underline_indicator: ^0.0.4

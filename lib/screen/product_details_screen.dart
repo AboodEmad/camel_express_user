@@ -5,14 +5,14 @@ import 'package:camel_express_user/widget/slider_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+class ProductDetailsScreen extends StatefulWidget {
+  const ProductDetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProductScreen> createState() => _ProductScreenState();
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
 }
 
-class _ProductScreenState extends State<ProductScreen> {
+class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   final List<DropdownMenuModel> _size = <DropdownMenuModel>[
     DropdownMenuModel(id: 1, title: 'Small'),
     DropdownMenuModel(id: 2, title: 'Medium'),

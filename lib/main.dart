@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
             '/change_password_screen': (context) => const ChangePasswordScreen(),
             '/edit_profile_screen': (context) => const EditProfileScreen(),
             '/bottom_nav_screen': (context) => const BottomNavScreen(),
-            '/product_details_screen': (context) => const ProductScreen(),
+            '/product_details_screen': (context) => const ProductDetailsScreen(),
           },
         );
       },

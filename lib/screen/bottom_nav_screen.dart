@@ -1,9 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:camel_express_user/helpers/app_colors.dart';
-import 'package:camel_express_user/screen/category/category_screen.dart';
-import 'package:camel_express_user/screen/home_screen.dart';
-import 'package:camel_express_user/screen/product_details_screen.dart';
-import 'package:camel_express_user/screen/profile_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/category_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/home_screen.dart';
+import 'package:camel_express_user/screen/cart_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -86,7 +86,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<Widget> pages = [
     const HomeScreen(),
     const CategoryScreen(),
-    const ProductDetailsScreen(),
+    const CartScreen(),
     const ProfileScreen(),
   ];
 }

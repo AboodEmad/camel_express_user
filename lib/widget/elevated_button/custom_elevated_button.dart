@@ -7,9 +7,15 @@ class CustomElevatedButton extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.onPressed,
+    this.height = 23,
+    this.width = 24,
+    this.iconSize = 16,
   }) : super(key: key);
   final IconData icon;
   final void Function() onPressed;
+  final double height;
+  final double width;
+  final double iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         elevation: MaterialStateProperty.all(0),
         minimumSize:
-        MaterialStateProperty.all(Size(24.w, 23.h)),
+        MaterialStateProperty.all(Size(width.w, height.h)),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.r),
@@ -32,7 +38,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: Icon(
         icon,
         color: AppColors.white,
-        size: 16,
+        size: iconSize,
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/custom_search_row.dart';
+import 'package:camel_express_user/widget/search/custom_search_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,19 +15,6 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  late TextEditingController _searchTextController;
-
-  @override
-  void initState() {
-    super.initState();
-    _searchTextController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _searchTextController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +42,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
           CustomSearchRow(
             width: 333,
             hintText: 'Search Category',
-            controller: _searchTextController,
             onPressed: () {},
             backgroundColor: const Color(0xFFEBEBEB),
           ),

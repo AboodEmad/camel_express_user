@@ -7,14 +7,15 @@ import 'package:camel_express_user/screen/auth/login_screen.dart';
 import 'package:camel_express_user/screen/auth/register_screen.dart';
 import 'package:camel_express_user/screen/auth/verification_screen.dart';
 import 'package:camel_express_user/screen/bottom_nav_screen.dart';
-import 'package:camel_express_user/screen/category/category_screen.dart';
-import 'package:camel_express_user/screen/product_details_screen.dart';
+import 'package:camel_express_user/screen/cart_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/category_screen.dart';
+import 'package:camel_express_user/screen/product/product_details_screen.dart';
 import 'package:camel_express_user/screen/profile/change_password_screen.dart';
 import 'package:camel_express_user/screen/profile/edit_profile_screen.dart';
 import 'package:camel_express_user/screen/favorite/favorites_screen.dart';
-import 'package:camel_express_user/screen/home_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/home_screen.dart';
 import 'package:camel_express_user/screen/notification/notification_screen.dart';
-import 'package:camel_express_user/screen/profile_screen.dart';
+import 'package:camel_express_user/screen/bottom_nav/profile_screen.dart';
 import 'package:camel_express_user/screen/stars/stars_screen.dart';
 import 'package:camel_express_user/screen/vendor/vendor_details_screen.dart';
 import 'package:camel_express_user/screen/vendor/vendor_screen.dart';
@@ -25,6 +26,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
+  // runApp(
+  //   DevicePreview(
+  //     enabled: true,
+  //     builder: (context) => const MyApp(),
+  //   ),
+  // );
   runApp(const MyApp());
 }
 
@@ -68,7 +75,7 @@ class MyApp extends StatelessWidget {
           locale: const Locale('en'),
           // locale: Locale(Provider.of<LanguagesProvider>(context).languages),
           // initialRoute: '/login_screen',
-          initialRoute: '/bottom_nav_screen',
+          initialRoute: '/cart_screen',
           routes: {
             '/login_screen': (context) => const LoginScreen(),
             '/register_screen': (context) => const RegisterScreen(),
@@ -93,6 +100,7 @@ class MyApp extends StatelessWidget {
             '/edit_profile_screen': (context) => const EditProfileScreen(),
             '/bottom_nav_screen': (context) => const BottomNavScreen(),
             '/product_details_screen': (context) => const ProductDetailsScreen(),
+            '/cart_screen': (context) => const CartScreen(),
           },
         );
       },

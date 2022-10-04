@@ -1,6 +1,6 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/elevated_button_with_icon.dart';
+import 'package:camel_express_user/widget/elevated_button/elevated_button_with_icon.dart';
 import 'package:camel_express_user/widget/profile/profile_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

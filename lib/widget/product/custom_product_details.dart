@@ -1,7 +1,7 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:camel_express_user/model/dropdown_menu.dart';
-import 'package:camel_express_user/widget/custom_elevated_button.dart';
+import 'package:camel_express_user/widget/elevated_button/custom_elevated_button.dart';
 import 'package:camel_express_user/widget/dropdown_menu/custom_dropdown_menu.dart';
 import 'package:camel_express_user/widget/text_button/app_text_button.dart';
 import 'package:flutter/material.dart';

@@ -1,18 +1,16 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
-import 'package:camel_express_user/widget/custom_search.dart';
+import 'package:camel_express_user/widget/search/custom_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSearchRow extends StatelessWidget {
   const CustomSearchRow({
     Key? key,
-    required this.controller,
     required this.hintText,
     required this.backgroundColor,
     required this.onPressed,
     required this.width,
   }) : super(key: key);
-  final TextEditingController controller;
   final String hintText;
   final Color backgroundColor;
   final double width;
@@ -22,7 +20,7 @@ class CustomSearchRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomSearch(width: width, controller: controller, backgroundColor: backgroundColor, hintText: hintText),
+        CustomSearch(width: width, backgroundColor: backgroundColor, hintText: hintText),
         SizedBox(
           width: 6.w,
         ),

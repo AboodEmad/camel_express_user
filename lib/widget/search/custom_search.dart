@@ -6,13 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomSearch extends StatelessWidget {
   const CustomSearch({
     Key? key,
-    required this.controller,
     required this.backgroundColor,
     required this.hintText,
     required this.width,
   }) : super(key: key);
 
-  final TextEditingController controller;
   final Color backgroundColor;
   final String hintText;
   final double width;
@@ -20,17 +18,16 @@ class CustomSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // width: 333.w,
       width: width.w,
       height: 50.h,
       child: TextField(
-        controller: controller,
         keyboardType: TextInputType.text,
         style: GoogleFonts.poppins(
           fontSize: 12.sp,
           fontWeight: FontWeight.w500,
           color: AppColors.black,
         ),
+        textAlign: TextAlign.start,
         decoration: InputDecoration(
           fillColor: backgroundColor,
           filled: true,
@@ -49,14 +46,23 @@ class CustomSearch extends StatelessWidget {
               color: Colors.transparent,
             ),
           ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(7.r),
+            borderSide: const BorderSide(
+              color: Colors.transparent,
+            ),
+          ),
           hintMaxLines: 1,
           prefixIcon: const Icon(
             Icons.search,
             color: AppColors.sameGrey,
           ),
-          suffixIcon: const Icon(
-            Icons.mic_none_outlined,
-            color: AppColors.sameGrey,
+          suffixIcon: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.mic_none_outlined,
+              color: AppColors.sameGrey,
+            ),
           ),
         ),
       ),

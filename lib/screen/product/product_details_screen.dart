@@ -1,6 +1,7 @@
+import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/model/dropdown_menu.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/custom_product_details.dart';
+import 'package:camel_express_user/widget/product/custom_product_details.dart';
 import 'package:camel_express_user/widget/slider_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF7F6FD),
+      backgroundColor: AppColors.screenColor,
       appBar: CustomAppBar(
         title: SizedBox(
           width: 170.w,
@@ -35,7 +36,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ),
         notification: '5',
-        backgroundColor: const Color(0xFFF7F6FD),
+        backgroundColor: AppColors.screenColor,
       ),
       body: ListView(
         children: [

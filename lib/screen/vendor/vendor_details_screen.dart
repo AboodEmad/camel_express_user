@@ -1,6 +1,6 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/custom_search.dart';
+import 'package:camel_express_user/widget/search/custom_search.dart';
 import 'package:camel_express_user/widget/is_favorite_item.dart';
 import 'package:camel_express_user/widget/menu_item.dart';
 import 'package:camel_express_user/widget/popular_item.dart';
@@ -19,19 +19,16 @@ class VendorDetailsScreen extends StatefulWidget {
 
 class _VendorDetailsScreenState extends State<VendorDetailsScreen>
     with SingleTickerProviderStateMixin {
-  late TextEditingController _searchTextController;
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _searchTextController = TextEditingController();
     _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
   void dispose() {
-    _searchTextController.dispose();
     _tabController.dispose();
     super.dispose();
   }
@@ -232,9 +229,8 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen>
               top: 29.h,
               bottom: 22.h,
             ),
-            child: CustomSearch(
+            child: const CustomSearch(
               width: double.infinity,
-              controller: _searchTextController,
               hintText: 'Search',
               backgroundColor: AppColors.lightWhite,
             ),

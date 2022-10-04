@@ -1,9 +1,9 @@
 import 'package:camel_express_user/helpers/app_colors.dart';
 import 'package:camel_express_user/helpers/text_style.dart';
 import 'package:camel_express_user/widget/appbar/custom_appbar.dart';
-import 'package:camel_express_user/widget/custom_search_row.dart';
+import 'package:camel_express_user/widget/search/custom_search_row.dart';
 import 'package:camel_express_user/widget/title_and_view_all.dart';
-import 'package:camel_express_user/widget/vendor_near_you.dart';
+import 'package:camel_express_user/widget/vendor/vendor_near_you.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,19 +18,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late TextEditingController _searchTextController;
   late PageController _pageViewController;
 
   @override
   void initState() {
     super.initState();
-    _searchTextController = TextEditingController();
     _pageViewController = PageController(initialPage: 1);
   }
 
   @override
   void dispose() {
-    _searchTextController.dispose();
     _pageViewController.dispose();
     super.dispose();
   }
@@ -60,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
           CustomSearchRow(
             width: 333,
             hintText: 'Search',
-            controller: _searchTextController,
             onPressed: () {},
             backgroundColor: AppColors.lightWhite,
           ),
